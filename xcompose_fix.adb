@@ -38,9 +38,9 @@ procedure XCompose_Fix is
 
 	function Process_Line (Original : String) return String
 	is
-		Delimiter_Pos : Natural := Index (Original, ":", Original'First);
-		Header_S : String := Original (Original'First .. Delimiter_Pos + 1);
-		Body_S : String := Original (Delimiter_Pos + 2 .. Original'Last);
+		Delimiter_Pos : constant Natural := Index (Original, ":", Original'First);
+		Header_S : constant String := Original (Original'First .. Delimiter_Pos + 1);
+		Body_S : constant String := Original (Delimiter_Pos + 2 .. Original'Last);
 	begin
 		if Delimiter_Pos = 0 then
 			return Original;
@@ -62,7 +62,7 @@ procedure XCompose_Fix is
 		end if;
 
 		declare
-			Codepoint : String := Body_S (Body_S'First + 1 .. Body_S'Last);
+			Codepoint : constant String := Body_S (Body_S'First + 1 .. Body_S'Last);
 		begin
 			return Header_S & '"' & Codepoint_To_String (Codepoint) & '"' & " " & Codepoint; 
 		end;
