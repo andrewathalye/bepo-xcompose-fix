@@ -64,7 +64,7 @@ procedure XCompose_Fix is
 		declare
 			Codepoint : constant String := Body_S (Body_S'First + 1 .. Body_S'Last);
 		begin
-			return Header_S & '"' & Codepoint_To_String (Codepoint) & '"' & " " & Codepoint; 
+			return Header_S & '"' & Codepoint_To_String (Codepoint) & '"' & " " & Body_S; 
 		end;
 	end Process_Line;
 begin
