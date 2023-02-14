@@ -13,6 +13,7 @@ procedure XCompose_Fix is
 	Output_Unavailable : exception;
 
 	-- Imported subprograms from libxkbcommon
+	pragma Linker_Options ("-lxkbcommon");
 	function XKB_Keysym_From_Name (Name : String; Flags : int := 0) return Unsigned_32
 	with
 		Import => True,

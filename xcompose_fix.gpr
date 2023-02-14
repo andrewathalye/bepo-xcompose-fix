@@ -1,0 +1,10 @@
+project XCompose_Fix is
+	for Main use ("xcompose_fix.adb");
+	for Object_Dir use "obj";
+	for Exec_Dir use ".";
+	for Source_Dirs use ("src");
+
+	package Compiler is
+		for Default_Switches ("Ada") use ("-gnatwa", "-gnaty-h", "-gnatVa", "-O2");
+	end Compiler;
+end XCompose_Fix;
